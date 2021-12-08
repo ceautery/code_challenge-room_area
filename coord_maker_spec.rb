@@ -11,4 +11,12 @@ RSpec.describe CoordMaker do
       expect(subject.coords).to contain_exactly([0, 0], [0, 4])
     end
   end
+
+  context 'with a square' do
+    let(:vectors) { [['N', 4], ['E', 4], ['S', 4], ['W', 4]] }
+
+    it 'coords describe a square and return to origin' do
+      expect(subject.coords).to contain_exactly([0, 0], [0, 4], [4, 4], [4, 0], [0, 0])
+    end
+  end
 end
