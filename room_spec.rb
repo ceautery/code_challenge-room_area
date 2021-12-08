@@ -11,4 +11,12 @@ RSpec.describe Room do
       expect(subject.area).to eq(15)
     end
   end
+
+  context 'with an L-shaped room' do
+    let(:coords) { [[0, 0], [0, 9], [16, 9], [16, 5], [9, 5], [9, 0], [0, 0]] }
+
+    it 'calculates the correct area' do
+      expect(subject.area).to eq(109)
+    end
+  end
 end
